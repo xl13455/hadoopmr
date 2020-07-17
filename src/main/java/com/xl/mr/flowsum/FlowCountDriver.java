@@ -9,21 +9,18 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class FlowCountDriver {
-	
-	
 	//为了解决org.apache.hadoop.io.nativeio.NativeIO$Windows.access0(Ljava/lang/String;I)Z
-		static {
-		    try {
-		        // 设置 HADOOP_HOME 目录
-		        System.setProperty("hadoop.home.dir", "E:/hadoop-2.7.2");
-		        // 加载库文件
-		        System.load("E:/hadoop-2.7.2/bin/hadoop.dll");
-		    } catch (UnsatisfiedLinkError e) {
-		        System.err.println("Native code library failed to load.\n" + e);
-		        System.exit(1);
-		    }
-		}
-		
+	static {
+	    try {
+	        // 设置 HADOOP_HOME 目录
+	        System.setProperty("hadoop.home.dir", "E:/hadoop-2.7.2");
+	        // 加载库文件
+	        System.load("E:/hadoop-2.7.2/bin/hadoop.dll");
+	    } catch (UnsatisfiedLinkError e) {
+	        System.err.println("Native code library failed to load.\n" + e);
+	        System.exit(1);
+	    }
+	}	
 		
 	public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
 		
