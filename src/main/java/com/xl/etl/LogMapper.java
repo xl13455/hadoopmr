@@ -22,7 +22,7 @@ public class LogMapper extends Mapper<LongWritable,Text,Text,NullWritable>{
 		context.write(k, NullWritable.get());
 	}
 
-	private boolean parseLog(String line, Mapper<LongWritable, Text, Text, NullWritable>.Context context) {
+	public boolean parseLog(String line, Mapper<LongWritable, Text, Text, NullWritable>.Context context) {
 		// 1 截取
 		String[] fields = line.split(" ");
 		// 2 日志长度大于11的为合法
